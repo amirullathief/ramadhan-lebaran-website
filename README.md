@@ -1,59 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌙 Website Kegiatan Ramadhan & Lebaran
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website sederhana berbasis Laravel (tanpa database) untuk mencatat dan berbagi kegiatan pribadi selama bulan Ramadhan dan saat Lebaran.
 
-## About Laravel
+## ✨ Fitur
+- Halaman beranda dengan ringkasan kegiatan
+- Daftar kegiatan Ramadhan (sahur, tadarus, tarawih, i'tikaf, dll)
+- Daftar kegiatan Lebaran (zakat, shalat Id, halal bihalal, dll)
+- Detail setiap kegiatan (tempat, waktu, deskripsi)
+- Jadwal harian Ramadhan
+- Halaman tentang
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🛠 Prasyarat
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Pastikan komputer Anda sudah terinstall:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **PHP 8.2 atau lebih baru** → [Download PHP](https://www.php.net/downloads)
+- **Composer** → [Download Composer](https://getcomposer.org/download/)
+- **Git** (opsional, jika ingin clone) → [Download Git](https://git-scm.com/)
 
-## Learning Laravel
+> 💡 Jika menggunakan **XAMPP** versi terbaru, PHP 8.2 sudah tersedia. Composer harus diinstall terpisah.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📥 Cara Mendapatkan Kode
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Opsi 1: Clone dengan Git (Direkomendasikan)
+bash
+git clone https://github.com/amirullathief/ramadhan-lebaran-website.git
+cd ramadhan-lebaran-website
 
-## Laravel Sponsors
+Opsi 2: Download ZIP
+Buka https://github.com/amirullathief/ramadhan-lebaran-website
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Klik tombol Code → Download ZIP
 
-### Premium Partners
+Ekstrak file ZIP ke folder proyek (misal C:\xampp\htdocs\)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+🚀 Langkah Menjalankan Website
+Buka terminal (CMD, PowerShell, atau Git Bash) di folder proyek, lalu jalankan perintah berikut:
 
-## Contributing
+1. Install dependensi PHP
+bash
+composer install
+Perintah ini akan mengunduh semua package Laravel yang dibutuhkan.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Buat file environment
+bash
+cp .env.example .env
+Atau di Windows:
 
-## Code of Conduct
+bash
+copy .env.example .env
+3. Generate application key
+bash
+php artisan key:generate
+4. Jalankan server lokal
+bash
+php artisan serve
+Setelah server berjalan, Anda akan melihat:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+text
+Server running on [http://127.0.0.1:8000]
+5. Buka browser dan akses:
+text
+http://127.0.0.1:8000
+Website akan tampil. Anda bisa menjelajahi menu Kegiatan Ramadhan, Kegiatan Lebaran, Jadwal Ramadhan, dll.
 
-## Security Vulnerabilities
+❗ Catatan Penting
+Tidak perlu database – Semua data kegiatan sudah di-hardcode di dalam PageController.php.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Tidak perlu migrasi – Karena tidak menggunakan database, abaikan perintah php artisan migrate.
 
-## License
+Tidak ada gambar – Versi ini dibuat tanpa gambar agar ringan dan mudah dijalankan di komputer mana pun.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+🐛 Jika Terjadi Error
+Error	Solusi
+Composer not found	Pastikan Composer sudah terinstall. Jalankan composer -V di terminal.
+PHP version not sufficient	Website membutuhkan PHP 8.2+. Cek versi PHP Anda dengan php -v.
+Permission denied (Linux/Mac)	Beri izin tulis pada folder storage: chmod -R 775 storage bootstrap/cache
+Class 'App\Http\Controllers\PageController' not found	Jalankan composer dump-autoload
+Failed to push some refs saat git push	Pastikan repository sudah dibuat di GitHub dan URL remote sudah benar.
+📄 Lisensi
+Proyek ini bersifat open source dan dapat digunakan untuk belajar maupun dokumentasi pribadi.
+
+🙏 Kontribusi
+Jika ingin memperbaiki atau menambah kegiatan, silakan fork repository ini dan buat pull request.
+
+Selamat menjalankan ibadah puasa dan merayakan Idul Fitri! 🌙✨
+
+text
+
+Cara menambahkan ke GitHub:
+1. Buat file `README.md` di root proyek.
+2. Salin seluruh kode di atas.
+3. Simpan.
+4. Jalankan:
+   bash
+   git add README.md
+   git commit -m "Add comprehensive README with setup instructions"
+   git push origin main
